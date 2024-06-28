@@ -80,5 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ini_File_Structure_Reader_Lib\Ini_File_Structure_Reader_Lib.csproj">
+      <Project>{fdb24d24-99dc-4b0f-a17f-6e01f51bf9a6}</Project>
+      <Name>Ini_File_Structure_Reader_Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

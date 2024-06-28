@@ -16,6 +16,8 @@ namespace Ini_File_Structure
         public Form1()
         {
             InitializeComponent();
+            fileReader = new Ini_File_Structure_Reader_Lib.IniFileReader();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,40 +40,54 @@ namespace Ini_File_Structure
             }
         }
 
+        Ini_File_Structure_Reader_Lib.IniFileReader fileReader;
+
         private void buttonProcessFile_Click(object sender, EventArgs e)
         {
-            //ProcessIniContent(richTextBox1.Text);
+            ProcessIniContent(richTextBox1.Text);
         }
 
         private void ProcessIniContent(string iniContent)
         {
             var data = new Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
-            string currentSection = null;
-            var lines = iniContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            //string currentSection = null;
+            //var lines = iniContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (var line in lines)
+            //foreach (var line in lines)
+            //{
+            //    string trimmedLine = line.Trim();
+
+            //    if (string.IsNullOrWhiteSpace(trimmedLine) || trimmedLine.StartsWith(";"))
+            //        continue;
+
+            //    if (trimmedLine.StartsWith("[") && trimmedLine.EndsWith("]"))
+            //    {
+            //        currentSection = trimmedLine.Substring(1, trimmedLine.Length - 2);
+            //        if (!data.ContainsKey(currentSection))
+            //            data[currentSection] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            //    }
+            //    else if (trimmedLine.Contains("="))
+            //    {
+            //        var keyValue = trimmedLine.Split(new[] { '=' }, 2);
+            //        var key = keyValue[0].Trim();
+            //        var value = keyValue[1].Trim();
+
+            //        if (currentSection != null)
+            //            data[currentSection][key] = value;
+            //    }
+            //}
+
+            fileReader.LoadContent(iniContent);
+
+            foreach(string section in fileReader.GetSections())
             {
-                string trimmedLine = line.Trim();
-
-                if (string.IsNullOrWhiteSpace(trimmedLine) || trimmedLine.StartsWith(";"))
-                    continue;
-
-                if (trimmedLine.StartsWith("[") && trimmedLine.EndsWith("]"))
+                data[section] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+                foreach (string key in fileReader.GetKeys(section))
                 {
-                    currentSection = trimmedLine.Substring(1, trimmedLine.Length - 2);
-                    if (!data.ContainsKey(currentSection))
-                        data[currentSection] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-                }
-                else if (trimmedLine.Contains("="))
-                {
-                    var keyValue = trimmedLine.Split(new[] { '=' }, 2);
-                    var key = keyValue[0].Trim();
-                    var value = keyValue[1].Trim();
-
-                    if (currentSection != null)
-                        data[currentSection][key] = value;
+                    data[section][key] = fileReader.GetValue(section, key);
                 }
             }
+
 
             PopulateTreeView(data);
         }

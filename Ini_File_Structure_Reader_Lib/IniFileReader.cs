@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,20 +12,55 @@ namespace Ini_File_Structure_Reader_Lib
     {
         private readonly Dictionary<string, Dictionary<string, string>> data;
 
+        
+
         string filePath;
 
-        public IniFileReader(string filePath)
+        public IniFileReader()
         {
             data = new Dictionary<string, Dictionary<string, string>>();
-            this.filePath = filePath;
-            Load(filePath);
+            //data = Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
         }
 
-        private void Load(string filePath)
+       
+
+        public void LoadFile(string filePath)
+        {
+            //string currentSection = null;
+            //bool hasSection = false;
+            //foreach (var line in File.ReadAllLines(filePath))
+            //{
+            //    string trimmedLine = line.Trim();
+
+            //    if (string.IsNullOrWhiteSpace(trimmedLine) || trimmedLine.StartsWith(";"))
+            //        continue;
+
+            //    if (trimmedLine.StartsWith("[") && trimmedLine.EndsWith("]"))
+            //    {
+            //        currentSection = trimmedLine.Substring(1, trimmedLine.Length - 2);
+            //        if (!data.ContainsKey(currentSection))
+            //            data[currentSection] = new Dictionary<string, string>();
+            //    }
+            //    else if (trimmedLine.Contains("="))
+            //    {
+            //        var keyValue = trimmedLine.Split(new[] { '=' }, 2);
+            //        var key = keyValue[0].Trim();
+            //        var value = keyValue[1].Trim();
+
+            //        if (currentSection != null)
+            //            data[currentSection][key] = value;
+            //    }
+            //}
+
+            LoadContent(File.ReadAllText(filePath));
+        }
+
+        public void LoadContent(string content)
         {
             string currentSection = null;
             bool hasSection = false;
-            foreach (var line in File.ReadAllLines(filePath))
+
+            foreach (var line in content.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
             {
                 string trimmedLine = line.Trim();
 
@@ -47,6 +83,19 @@ namespace Ini_File_Structure_Reader_Lib
                         data[currentSection][key] = value;
                 }
             }
+        }
+
+        public string[] GetSections()
+        {
+            return data.Keys.ToArray();
+        }
+
+        public string[] GetKeys(string section)
+        {
+            if (data.TryGetValue(section, out var sectionData))
+                return sectionData.Keys.ToArray();
+
+            return new string[0];
         }
 
         public string GetValue(string section, string key)
