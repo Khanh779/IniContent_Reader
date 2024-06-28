@@ -10,7 +10,7 @@ This is a simple INI file reader and editor application built with C#. It allows
 - Save the modified INI file.
 
 ## Getting Started
-![image](https://github.com/Khanh779/Ini_File_Structure/blob/master/ScreenShot/Screenshot_2024.png)
+![image](https://github.com/Khanh779/Ini_File_Structure/blob/master/Screenshot/Screenshot_2024.png)
 
 ### Prerequisites
 - .NET Framework 4.7.2 or higher
