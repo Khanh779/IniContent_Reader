@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ini_File_Structure", "Ini_F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ini_File_Structure_Reader_Lib", "Ini_File_Structure_Reader_Lib\Ini_File_Structure_Reader_Lib.csproj", "{FDB24D24-99DC-4B0F-A17F-6E01F51BF9A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshot", "Screenshot", "{71ED93D1-81AA-43A3-9598-26109B1D49CC}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\quock\OneDrive\Hình ảnh\Ảnh chụp màn hình\Screenshot 2024.png = C:\Users\quock\OneDrive\Hình ảnh\Ảnh chụp màn hình\Screenshot 2024.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
