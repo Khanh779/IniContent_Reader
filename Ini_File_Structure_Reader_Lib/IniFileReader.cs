@@ -49,6 +49,16 @@ namespace Ini_File_Structure_Reader_Lib
             }
         }
 
+        public bool CheckSection(string section)
+        {
+            return data.ContainsKey(section);
+        }
+
+        public bool CheckKey(string section, string key)
+        {
+            return data.ContainsKey(section) && data[section].ContainsKey(key);
+        }
+
         public string GetValue(string section, string key)
         {
             if (data.TryGetValue(section, out var sectionData) && sectionData.TryGetValue(key, out var value))
