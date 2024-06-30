@@ -60,7 +60,7 @@ namespace IniContent_Reader
             this.buttonProcessFile.Name = "buttonProcessFile";
             this.buttonProcessFile.Size = new System.Drawing.Size(75, 23);
             this.buttonProcessFile.TabIndex = 2;
-            this.buttonProcessFile.Text = "Process ini";
+            this.buttonProcessFile.Text = "Process";
             this.buttonProcessFile.UseVisualStyleBackColor = true;
             this.buttonProcessFile.Click += new System.EventHandler(this.buttonProcessFile_Click);
             // 
