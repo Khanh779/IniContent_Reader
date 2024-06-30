@@ -51,7 +51,11 @@ namespace IniContent_Lib
                     var keyValue = trimmedLine.Split(new[] { '=' }, 2);
                     var key = keyValue[0].Trim();
                     var value = keyValue[1].Trim();
-
+                    if(value.Length>2 && value.StartsWith("\"") && value.EndsWith("\""))
+                    {
+                        value = value.Substring(1, value.Length - 2);
+                    }
+                   
                     if (currentSection != null)
                         data[currentSection][key] = value;
                 }

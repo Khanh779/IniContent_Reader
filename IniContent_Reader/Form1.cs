@@ -72,11 +72,11 @@ namespace IniContent_Reader
             treeView1.Nodes.Clear();
             foreach (var section in data)
             {
-                TreeNode sectionNode = new TreeNode(section.Key +" <sector>");
+                TreeNode sectionNode = new TreeNode(section.Key);
                 foreach (var keyValue in section.Value)
                 {
-                    TreeNode keyNode = new TreeNode(keyValue.Key +" <property>");
-                    TreeNode valueNode = new TreeNode(keyValue.Value + " <value>");
+                    TreeNode keyNode = new TreeNode(keyValue.Key);
+                    TreeNode valueNode = new TreeNode(keyValue.Value);
                     keyNode.Nodes.Add(valueNode);
                     sectionNode.Nodes.Add(keyNode);
                 }
