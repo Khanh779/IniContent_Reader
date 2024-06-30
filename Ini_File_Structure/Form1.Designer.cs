@@ -30,6 +30,7 @@ namespace Ini_File_Structure
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.buttonProcessFile = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -78,7 +79,7 @@ namespace Ini_File_Structure
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(365, 271);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // splitContainer1
@@ -110,6 +111,7 @@ namespace Ini_File_Structure
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ini File Reader";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

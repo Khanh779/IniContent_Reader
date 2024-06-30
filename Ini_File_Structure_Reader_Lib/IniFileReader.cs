@@ -10,7 +10,7 @@ namespace Ini_File_Structure_Reader_Lib
 {
     public class IniFileReader
     {
-        private readonly Dictionary<string, Dictionary<string, string>> data;
+        private Dictionary<string, Dictionary<string, string>> data;
 
         
 
@@ -19,47 +19,20 @@ namespace Ini_File_Structure_Reader_Lib
         public IniFileReader()
         {
             data = new Dictionary<string, Dictionary<string, string>>();
-            //data = Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
+          
         }
 
-       
 
-        public void LoadFile(string filePath)
-        {
-            //string currentSection = null;
-            //bool hasSection = false;
-            //foreach (var line in File.ReadAllLines(filePath))
-            //{
-            //    string trimmedLine = line.Trim();
-
-            //    if (string.IsNullOrWhiteSpace(trimmedLine) || trimmedLine.StartsWith(";"))
-            //        continue;
-
-            //    if (trimmedLine.StartsWith("[") && trimmedLine.EndsWith("]"))
-            //    {
-            //        currentSection = trimmedLine.Substring(1, trimmedLine.Length - 2);
-            //        if (!data.ContainsKey(currentSection))
-            //            data[currentSection] = new Dictionary<string, string>();
-            //    }
-            //    else if (trimmedLine.Contains("="))
-            //    {
-            //        var keyValue = trimmedLine.Split(new[] { '=' }, 2);
-            //        var key = keyValue[0].Trim();
-            //        var value = keyValue[1].Trim();
-
-            //        if (currentSection != null)
-            //            data[currentSection][key] = value;
-            //    }
-            //}
-
-            LoadContent(File.ReadAllText(filePath));
-        }
+        /// <summary>
+        /// Get the content of the file
+        /// </summary>
+        /// <param name="content"></param>
 
         public void LoadContent(string content)
         {
             string currentSection = null;
             bool hasSection = false;
-
+            data = new Dictionary<string, Dictionary<string, string>>();
             foreach (var line in content.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
             {
                 string trimmedLine = line.Trim();

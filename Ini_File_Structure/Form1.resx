@@ -117,4 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>[Sector_1]
+Property_1=Value_1
+Property_2=Value_2
+Property_3=Value_3
+
+[Sector_2]
+Property_1=Value_1
+Property_2=Value_2
+Property_3=Value_3
+
+[Sector_3]
+Property_1=Value_1
+Property_2=Value_2
+Property_3=Value_3
+</value>
+  </data>
 </root>

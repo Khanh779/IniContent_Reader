@@ -22,7 +22,7 @@ namespace Ini_File_Structure
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ProcessIniContent(richTextBox1.Text);
         }
 
 
@@ -50,32 +50,7 @@ namespace Ini_File_Structure
         private void ProcessIniContent(string iniContent)
         {
             var data = new Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
-            //string currentSection = null;
-            //var lines = iniContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            //foreach (var line in lines)
-            //{
-            //    string trimmedLine = line.Trim();
-
-            //    if (string.IsNullOrWhiteSpace(trimmedLine) || trimmedLine.StartsWith(";"))
-            //        continue;
-
-            //    if (trimmedLine.StartsWith("[") && trimmedLine.EndsWith("]"))
-            //    {
-            //        currentSection = trimmedLine.Substring(1, trimmedLine.Length - 2);
-            //        if (!data.ContainsKey(currentSection))
-            //            data[currentSection] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-            //    }
-            //    else if (trimmedLine.Contains("="))
-            //    {
-            //        var keyValue = trimmedLine.Split(new[] { '=' }, 2);
-            //        var key = keyValue[0].Trim();
-            //        var value = keyValue[1].Trim();
-
-            //        if (currentSection != null)
-            //            data[currentSection][key] = value;
-            //    }
-            //}
+          
 
             fileReader.LoadContent(iniContent);
 
@@ -113,6 +88,7 @@ namespace Ini_File_Structure
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             ProcessIniContent(richTextBox1.Text);
+           
         }
     }
 }
