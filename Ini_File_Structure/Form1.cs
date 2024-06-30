@@ -82,7 +82,7 @@ namespace Ini_File_Structure
                 }
                 treeView1.Nodes.Add(sectionNode);
             }
-            //treeView1.ExpandAll();
+          
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
