@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ini_File_Structure
+namespace IniContent_Reader
 {
     internal static class Program
     {

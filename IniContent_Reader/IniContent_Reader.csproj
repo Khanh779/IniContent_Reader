@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3AFE3556-AF77-4A5C-8787-7BFFC5DE7242}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Ini_File_Structure</RootNamespace>
-    <AssemblyName>Ini_File_Structure</AssemblyName>
+    <RootNamespace>IniContent_Reader</RootNamespace>
+    <AssemblyName>IniContent_Reader</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -81,9 +81,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ini_File_Structure_Reader_Lib\Ini_File_Structure_Reader_Lib.csproj">
+    <ProjectReference Include="..\IniContent_Lib\IniContent_Lib.csproj">
       <Project>{fdb24d24-99dc-4b0f-a17f-6e01f51bf9a6}</Project>
-      <Name>Ini_File_Structure_Reader_Lib</Name>
+      <Name>IniContent_Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,9 +6,9 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ini_File_Structure_Reader_Lib
+namespace IniContent_Lib
 {
-    public class IniFileReader
+    public class IniContentReader
     {
         private Dictionary<string, Dictionary<string, string>> data;
 
@@ -16,7 +16,7 @@ namespace Ini_File_Structure_Reader_Lib
 
         string filePath;
 
-        public IniFileReader()
+        public IniContentReader()
         {
             data = new Dictionary<string, Dictionary<string, string>>();
           

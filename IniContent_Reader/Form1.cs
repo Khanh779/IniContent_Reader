@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ini_File_Structure
+namespace IniContent_Reader
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            fileReader = new Ini_File_Structure_Reader_Lib.IniFileReader();
+            fileReader = new IniContent_Lib.IniContentReader();
 
         }
 
@@ -40,7 +40,7 @@ namespace Ini_File_Structure
             }
         }
 
-        Ini_File_Structure_Reader_Lib.IniFileReader fileReader;
+        IniContent_Lib.IniContentReader fileReader;
 
         private void buttonProcessFile_Click(object sender, EventArgs e)
         {

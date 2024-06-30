@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ini_File_Structure", "Ini_File_Structure\Ini_File_Structure.csproj", "{3AFE3556-AF77-4A5C-8787-7BFFC5DE7242}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IniContent_Reader", "IniContent_Reader\IniContent_Reader.csproj", "{3AFE3556-AF77-4A5C-8787-7BFFC5DE7242}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ini_File_Structure_Reader_Lib", "Ini_File_Structure_Reader_Lib\Ini_File_Structure_Reader_Lib.csproj", "{FDB24D24-99DC-4B0F-A17F-6E01F51BF9A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IniContent_Lib", "IniContent_Lib\IniContent_Lib.csproj", "{FDB24D24-99DC-4B0F-A17F-6E01F51BF9A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

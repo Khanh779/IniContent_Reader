@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ini_File_Structure_Reader_Lib")]
+[assembly: AssemblyTitle("IniContent_Reader")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ini_File_Structure_Reader_Lib")]
+[assembly: AssemblyProduct("IniContent_Reader")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fdb24d24-99dc-4b0f-a17f-6e01f51bf9a6")]
+[assembly: Guid("3afe3556-af77-4a5c-8787-7bffc5de7242")]
 
 // Version information for an assembly consists of the following four values:
 //

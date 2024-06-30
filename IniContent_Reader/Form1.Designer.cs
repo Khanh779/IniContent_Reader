@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Ini_File_Structure
+namespace IniContent_Reader
 {
     partial class Form1
     {
